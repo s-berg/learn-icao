@@ -39,14 +39,13 @@ class Hallo {
     }
 
     public static void main(String[] args) {
-        MainWindow mainWindow = new MainWindow();
-        mainWindow.createElements();
+        MainWindow mainWindow = new MainWindow(IcaoFactory.getLetterList());
 
-        List<Letter> letterList = IcaoFactory.getLetterList();
-       for(int i = 0 ; i< 5 ; i++){
-           //play(letter);
-           play( letterList.get(getRandomVal()));
-       }
+//        List<Letter> letterList = IcaoFactory.getLetterList();
+//       for(int i = 0 ; i< 5 ; i++){
+//           //play(letter);
+//           play( letterList.get(getRandomVal()));
+//       }
 
     }
 }

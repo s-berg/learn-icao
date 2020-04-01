@@ -1,17 +1,28 @@
 package com.sberg.gui.comp.learn;
 
+import com.sberg.alphabet.model.Letter;
+import com.sberg.gui.comp.learn.model.LearnTableModel;
+
 import javax.swing.*;
+import java.awt.*;
+import java.util.List;
 
 public class LearnPanel extends JPanel {
 
-    public LearnPanel(){
+    public LearnPanel(List<Letter> letters){
         super();
-        this.createElements();
+        this.createElements(letters);
     }
 
-    public void createElements(){
-        JLabel label = new JLabel("Learn Panel");
-        this.add(label);
+    private void createElements(List<Letter> letters){
+        JTable table = new JTable();
+        table.setModel(new LearnTableModel(letters));
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+
+        this.setLayout(new BorderLayout());
+        this.add(scrollPane, BorderLayout.CENTER);
+
         //TODO put swing elements here
     }
 }
