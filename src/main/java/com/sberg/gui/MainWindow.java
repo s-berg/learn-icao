@@ -31,13 +31,14 @@ public class MainWindow extends JFrame implements WindowListener {
     private void createElements(){
 
         learnPanel = new LearnPanel(letterList);
+        listenPanel = new ListenPanel(letterList);
         hearPanel = new HearPanel();
-        listenPanel = new ListenPanel();
+
 
         JRootPane rootPane = this.getRootPane();
         tabbedPane.add("Learn Tab", learnPanel);
-        tabbedPane.add("Hear Tab", hearPanel);
         tabbedPane.add("Listen Tab", listenPanel);
+        tabbedPane.add("Hear Tab", hearPanel);
 
         rootPane.setLayout(new BorderLayout());
         rootPane.add(tabbedPane, BorderLayout.CENTER);
