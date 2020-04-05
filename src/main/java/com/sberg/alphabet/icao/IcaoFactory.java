@@ -13,6 +13,18 @@ public class IcaoFactory {
 
     private static List<Letter> letterList;
 
+    public static Letter getLetterForChar(char paramChar){
+        if(letterList == null){
+            letterList = getLetterList();
+        }
+        for(Letter letterLoop:letterList){
+            if(letterLoop.getLetter() == paramChar){
+                return letterLoop;
+            }
+        }
+        return null;
+    }
+
     public static List<Letter>getLetterList(){
         if(letterList!= null){
             return letterList;
