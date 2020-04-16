@@ -13,13 +13,26 @@ public class IcaoFactory {
 
     private static List<Letter> letterList;
 
-    public static Letter getLetterForCharacter(List<Letter>letters, char charLetter){
-        for(Letter letterLoop:letters){
-            if(letterLoop.getLetter() == charLetter){
+
+    public static Letter getLetterForCharacter(List<Letter>letters, char charLetter) {
+        for (Letter letterLoop : letters) {
+            if (letterLoop.getLetter() == charLetter) {
                 return letterLoop;
             }
         }
+        return null;
+    }
         //TOTO throw NotFoundException
+
+    public static Letter getLetterForChar(char paramChar){
+        if(letterList == null){
+            letterList = getLetterList();
+        }
+        for(Letter letterLoop:letterList){
+            if(letterLoop.getLetter() == paramChar){
+                return letterLoop;
+            }
+        }
         return null;
     }
 
